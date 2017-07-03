@@ -6,7 +6,14 @@
     <script type="text/javascript" src="app.js"></script>
 </head>    
 <body ng-app="HangmanApp" ng-controller="GameController">
-  {{demo}}  
+<div class="">
+    <div class="">You have to guess: {{displayWord}}</div>
+    <div>
+        <div>
+            <input type="text" name="guess" ng-model="input.letter"/>
+        </div>
+    </div>
+</div>
 </body>
     
     
