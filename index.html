@@ -12,10 +12,14 @@
 </head>    
 <body ng-app="HangmanApp" ng-controller="GameController">
 <div class="">
+    <div class="">Guesses Left :: {{guesses}}</div>
+    <div class="">Correct Guesses :: <span ng-repeat="letter in correctLettersChosen">{{letter}}</span></div>
+    <div class="">Incorrect Guesses :: <span ng-repeat="letter in incorrectLettersChosen">{{letter}}</span></div>
     <div class="">You have to guess: {{displayWord}}</div>
     <div>
         <div>
             <input type="text" name="guess" ng-model="input.letter"/>
+            <button ng-click="letterChosen()">Submit</button>
         </div>
     </div>
 </div>
