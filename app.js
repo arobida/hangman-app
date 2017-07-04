@@ -63,7 +63,7 @@ $scope.letterChosen=function(){
     }
     $scope.input.letter="";
     if($scope.guesses==0){
-        alert("You Have Lost!");
+        alert("You Have Lost! The Answer Was "+""+selectedWord);
         $timeout(function(){
             newGame();
         },500);
