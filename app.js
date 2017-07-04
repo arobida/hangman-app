@@ -1,7 +1,7 @@
 var app=angular.module("HangmanApp",[]);
 app.controller("GameController",["$scope", function($scope){
 
-var words=["rat","cat","bat","mat"];
+var words=["tolowercase","log","length","random","round","slice","indexof","parseint","parsefloat"];
 $scope.incorrectLettersChosen=[];
 $scope.correctLettersChosen=[];
 var selectedWord='';
@@ -58,10 +58,16 @@ $scope.letterChosen=function(){
     if(correct){
         $scope.correctLettersChosen.push($scope.input.letter.toLowerCase());
     }else{
+        $scope.guesses--;
         $scope.incorrectLettersChosen.push($scope.input.letter.toLowerCase());
     }
     $scope.input.letter="";
-    
+    if($scope.guesses==0){
+        alert("You Have Lost!");
+    }
+    if($scope.displayWord.indexOf("*")==-1){
+        alert("You Have Won!");
+    }
 }
 
 newGame();    
