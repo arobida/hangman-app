@@ -14,8 +14,8 @@
 </head>
 <body ng-app="HangmanApp" ng-controller="GameController">
 	
-<p class="title">HANGMAN
-</p>
+<p class="title">HANGMAN</p>
+
 
 	<div class="guess">
 	<input class="dial" 
@@ -29,7 +29,6 @@
     data-thickness=".4"
     data-displayPrevious=false
     ng-model="guesses" >
-		
 	</div>
 	
 	<div>
@@ -55,7 +54,7 @@
 	<div class="word">{{displayWord}}</div>
 	<div class="input">
 		<input type="text" name="guess" ng-model="input.letter" ng-minlength="1" ng-maxlength="1" ng-pattern="/^[A-Za-z]+$/">
-		
+		<p class="hint">Hint:(JavaScript Methods Ex.In console.log "log" would be the method name.)</p>
 	</div>
 	<button class="button" ng-click="letterChosen()">SUBMIT</button>
 </body>
