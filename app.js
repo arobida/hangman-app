@@ -1,5 +1,5 @@
 var app=angular.module("HangmanApp",[]);
-app.controller("GameController",["$scope", function($scope){
+app.controller("GameController",["$scope","$timeout", function($scope,$timeout){
 
 var words=["tolowercase","log","length","random","round","slice","indexof","parseint","parsefloat"];
 $scope.incorrectLettersChosen=[];
@@ -64,9 +64,15 @@ $scope.letterChosen=function(){
     $scope.input.letter="";
     if($scope.guesses==0){
         alert("You Have Lost!");
+        $timeout(function(){
+            newGame();
+        },500);
     }
     if($scope.displayWord.indexOf("*")==-1){
         alert("You Have Won!");
+        $timeout(function(){
+            newGame();
+        },500);
     }
 }
 
